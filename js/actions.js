@@ -18,16 +18,16 @@ $(function() {
 function listarContactos() {
     function onSuccess(contacts) {
         $('#lista').html('');
-        for(i=0; i<contacts.length; i++) {
+        for(var i=0; i<contacts.length; i++) {
           $('<li class="forward"><a href="tel:'+contacts[i].phoneNumbers[0].value+'">'+contacts[i].name.formatted+'</a></li>').appendTo('#lista');
-      }
+        }
     };
     function onError(contactError) {
         alert('onError!');
     };
     var options = new ContactFindOptions();
-    options.filter = "";
-    options.multiple = true; 
+    options.filter = "Mario";
+    options.multiple = true;
     var fields = ["*"];
     navigator.contacts.find(fields, onSuccess, onError, options);
 }
