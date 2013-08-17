@@ -27,7 +27,7 @@ function listarContactos() {
         alert('onError!');
     };
     var options = new ContactFindOptions();
-    options.filter = "Mario";
+    options.filter = "";
     options.multiple = true;
     var fields = ["*"];
     navigator.contacts.find(fields, onSuccess, onError, options);
